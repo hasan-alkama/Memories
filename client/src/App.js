@@ -13,7 +13,7 @@ const App = () => {
   const [CurrentId, setCurrentId] = useState(0);
   useEffect(() => {
     dispatch(getPost());
-  }, [dispatch]);
+  }, [CurrentId,dispatch]);
   return (
     <Container maxidth="lg">
       <AppBar className={classes.appBar} position="static" color="inherit">

@@ -9,8 +9,10 @@ app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 
 app.use("/post", postRoute);
+
 const Connection_URL =
-  "mongodb+srv://alkama_123:Alkama123@cluster0.rgltw.mongodb.net/blogDB";
+  "mongodb+srv://alkama_123:" +
+  process.env.PASSWORDS +" @cluster0.rgltw.mongodb.net/blogDB";
 const PORT = process.env.PORT || 5000;
 mongoose
   .connect(Connection_URL, { useNewUrlParser: true, useUnifiedTopology: true })
